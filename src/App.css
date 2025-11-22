@@ -1,0 +1,49 @@
+.header-row {
+  display: flex; /* Puts children side by side in a row */
+  align-items: center; /* Vertically centers both items */
+  justify-content: space-between; /* Pushes brand to left edge, navbar to right edge */
+  padding: 1rem 25%; /* Top/bottom padding is 1rem, left/right is 15% of screen width - this pushes both items towards center */
+}
+
+.brand-toggle-group {
+  display: flex; /* Places brand name and icon side by side */
+  align-items: center; /* Vertically centers them */
+  gap: 1rem; /* Adds space between the name and icon */
+}
+
+.dark-mode-toggle {
+  background: none; /* Removes default button background */
+  border: none; /* Removes default button border */
+  cursor: pointer; /* Shows pointer cursor on hover */
+  font-size: 1.2rem; /* Sets icon size */
+  color: inherit; /* Inherits text color from parent (works with dark mode) */
+  padding: 0.5rem; /* Adds clickable area around the icon */
+  padding-bottom: 1rem;
+  display: flex; /* Centers the icon inside the button */
+  align-items: center; /* Vertically centers icon */
+  justify-content: center; /* Horizontally centers icon */
+}
+
+.dark-mode-toggle:hover {
+  opacity: 0.7; /* Dims slightly on hover for feedback */
+}
+
+.social-link {
+  color: inherit; /* Inherits text color so it works with dark mode */
+  font-size: 1.4rem; /* Size of the icon */
+  display: flex; /* Centers the icon properly */
+  align-items: center; /* Vertically centers icon */
+  transition: opacity 0.2s; /* Smooth transition for hover effect */
+}
+
+.social-link:hover {
+  opacity: 0.7; /* Dims slightly on hover */
+  color: #0a66c2; /* LinkedIn's brand blue color on hover */
+}
+
+.profile-photo {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Must match width for a perfect circle */
+  border-radius: 50%; /* Makes it circular */
+  object-fit: cover; /* Crops image to fill circle without distortion */
+}

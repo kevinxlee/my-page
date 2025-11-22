@@ -1,0 +1,54 @@
+.resume-container {
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: center; /* Centers children horizontally */
+    padding: 2rem 15%; /* Adds padding around the content */
+}
+
+.resume-header {
+    font-family: sans-serif; /* Clean, modern font */
+    font-size: 1.5rem; /* Header size */
+    margin-bottom: 1rem; /* Space below header */
+}
+
+.resume-download-link {
+    margin-bottom: 1.5rem; /* Space between icon and PDF viewer */
+    color: #0a66c2; /* LinkedIn blue */
+    font-size: 1.5rem; /* Icon size */
+    display: flex; /* Centers the icon properly */
+    align-items: center; /* Vertically centers icon */
+    transition: opacity 0.2s; /* Smooth hover effect */
+}
+
+.resume-download-link:hover {
+    opacity: 0.7; /* Dims slightly on hover */
+}
+
+.resume-container.dark .resume-download-link {
+    color: #5eb1ff; /* Lighter blue for dark mode */
+}
+
+.resume-pdf-container {
+    width: 100%; /* Takes full width of container */
+    max-width: 900px; /* Limits max width */
+    display: flex; /* Enables flexbox */
+    flex-direction: column; /* Stacks pages vertically */
+    align-items: center; /* Centers pages horizontally */
+}
+
+.resume-page-wrapper {
+    margin-bottom: 1rem; /* Adds space between pages */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    border-radius: 4px; /* Rounded corners */
+    overflow: hidden; /* Ensures border-radius clips the canvas */
+}
+
+/* Dark mode: inverts PDF colors by targeting canvas inside the container */
+.resume-pdf-container.dark canvas {
+    filter: invert(1) hue-rotate(180deg); /* Inverts colors and corrects hue shift */
+}
+
+/* Dark mode shadow adjustment */
+.resume-pdf-container.dark .resume-page-wrapper {
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1); /* Lighter shadow for dark mode */
+}

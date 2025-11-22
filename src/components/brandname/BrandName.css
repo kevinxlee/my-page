@@ -1,0 +1,31 @@
+.brand-container {
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Stacks children vertically (name on top, subtitle below) */
+}
+
+.brand-name {
+    font-family: serif; /* Uses a serif font (fonts with small decorative strokes) */
+    letter-spacing: 2px; /* Adds 2px of space between each letter */
+    white-space: nowrap; /* Prevents text from wrapping to a new line */
+    margin: 0; /* Removes default margin from h1 */
+}
+
+.brand-subtitle {
+    font-family: serif; /* Matches the brand name font */
+    font-size: 0.9rem; /* Smaller than the main name */
+    color: gray; /* Subtle color so it doesn't compete with the name */
+    margin: 0; /* Removes default margin from p */
+    letter-spacing: 1px; /* Slightly less spacing than the name */
+}
+
+
+/* Responsive font size for smaller screens */
+@media (max-width: 600px) {
+    .brand-name {
+        font-size: 1.2rem; /* Smaller name on mobile */
+    }
+    
+    .brand-subtitle {
+        font-size: 0.75rem; /* Smaller subtitle on mobile */
+    }
+}

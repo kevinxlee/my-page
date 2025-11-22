@@ -1,0 +1,20 @@
+.home-container {
+    display: flex; /* Enables flexbox layout */
+    flex-direction: column; /* Stacks children vertically */
+    align-items: flex-start; /* Aligns children to the left (start of cross-axis) */
+    justify-content: flex-start; /* Aligns children to the top (start of main-axis) */
+    padding: 2rem 25%; /* Adds vertical padding and horizontal padding to match your header */
+}
+
+.home-header {
+    font-family: sans-serif; /* Uses a clean, modern sans-serif font */
+    font-size: 1.5rem; /* Slightly larger for a header */
+    margin-bottom: 0.5rem; /* Adds space below the header */
+}
+
+.home-paragraph {
+    font-family: sans-serif; /* Matches the header font */
+    font-size: 1rem; /* Base font size */
+    line-height: 1.6; /* Increases line height for better readability */
+    max-width: 800px; /* Limits the width for easier reading */
+}
