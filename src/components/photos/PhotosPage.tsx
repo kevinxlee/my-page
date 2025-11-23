@@ -24,6 +24,7 @@ const PhotosPage: React.FC<PhotosPageProps> = ({ darkMode = false }) => {
     // ===== STATE =====
     const [photos, setPhotos] = useState<SelectedPhoto[]>([]);
     const [error, setError] = useState<string | null>(null);
+    const [loading] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [accessToken, setAccessToken] = useState<string | null>(null);
 
