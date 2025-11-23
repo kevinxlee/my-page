@@ -9,7 +9,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/b
 
 function ResumePage({ darkMode }: { darkMode: boolean }) {
   const [numPages, setNumPages] = useState<number>(0);
-
+  const resumePath = `${import.meta.env.BASE_URL}resume.pdf`;
   function onDocumentLoadSuccess({ numPages }: { numPages: number }) {
     setNumPages(numPages);
   }
@@ -17,7 +17,7 @@ function ResumePage({ darkMode }: { darkMode: boolean }) {
   return (
     <div className={`resume-container ${darkMode ? 'dark' : ''}`}>
       <a 
-        href="/resume.pdf" 
+        href={resumePath}
         download 
         className="resume-download-link"
         title="Download PDF" /* Tooltip on hover */
@@ -27,7 +27,7 @@ function ResumePage({ darkMode }: { darkMode: boolean }) {
 
       <div className={`resume-pdf-container ${darkMode ? 'dark' : ''}`}>
         <Document
-          file="/resume.pdf"
+          file={resumePath}
           onLoadSuccess={onDocumentLoadSuccess}
           className="resume-document"
         >

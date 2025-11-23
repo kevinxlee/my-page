@@ -5,7 +5,7 @@ import App from './App.tsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/portfolio-website"> {/* Add basename prop */}
     <App />
   </BrowserRouter>,
 )
