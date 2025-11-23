@@ -5,6 +5,7 @@ import { Image, Loader2, AlertCircle, Plus } from "lucide-react";
 declare global {
     interface Window {
         google?: any;
+        gapi?: any;
     }
 }
 
@@ -22,7 +23,6 @@ const PhotosPage: React.FC<PhotosPageProps> = ({ darkMode = false }) => {
 
     // ===== STATE =====
     const [photos, setPhotos] = useState<SelectedPhoto[]>([]);
-    const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [accessToken, setAccessToken] = useState<string | null>(null);
@@ -134,58 +134,6 @@ const PhotosPage: React.FC<PhotosPageProps> = ({ darkMode = false }) => {
         setAccessToken(null);
         setPhotos([]);
     };
-
-    // ========== FETCH PHOTOS ==========
-
-    //   const loadGooglePhotos = async () => {
-    //     if (!accessToken) {
-    //       setError("You must sign in first.");
-    //       return;
-    //     }
-
-    //     try {
-    //       setLoading(true);
-    //       setError(null);
-
-    //       const res = await fetch(
-    //         "https://photoslibrary.googleapis.com/v1/mediaItems:search",
-    //         {
-    //           method: "POST",
-    //           headers: {
-    //             Authorization: `Bearer ${accessToken}`,
-    //             "Content-Type": "application/json"
-    //           },
-    //           body: JSON.stringify({
-    //             pageSize: 50
-    //           })
-    //         }
-    //       );
-
-    //       const data = await res.json();
-
-    //       if (data.error) {
-    //         setError(data.error.message || "Failed to load photos");
-    //         return;
-    //       }
-
-    //       if (!data.mediaItems) {
-    //         setError("No photos found in your Google Photos library.");
-    //         return;
-    //       }
-
-    //       const items: SelectedPhoto[] = data.mediaItems.map((item: any) => ({
-    //         id: item.id,
-    //         baseUrl: item.baseUrl,
-    //         filename: item.filename
-    //       }));
-
-    //       setPhotos(items);
-    //     } catch (err) {
-    //       setError("Failed to fetch photos.");
-    //     } finally {
-    //       setLoading(false);
-    //     }
-    //   };
 
     // ========== UI ==========
 
