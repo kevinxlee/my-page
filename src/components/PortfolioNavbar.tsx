@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import '../App.css';
 
-function MyNavbar({ darkMode, activeSection }: { darkMode: boolean; activeSection: string }) {
+function PortfolioNavbar({ darkMode, activeSection }: { darkMode: boolean; activeSection: string }) {
   const scrollToSection = (sectionId: string) => {
     window.history.pushState(null, '', `#${sectionId}`);
     
@@ -53,4 +53,4 @@ function MyNavbar({ darkMode, activeSection }: { darkMode: boolean; activeSectio
   );
 }
 
-export default MyNavbar;
+export default PortfolioNavbar;

@@ -1,54 +1,80 @@
 .resume-container {
-    display: flex; /* Enables flexbox layout */
-    flex-direction: column; /* Stacks children vertically */
-    align-items: center; /* Centers children horizontally */
-    padding: 2rem 15%; /* Adds padding around the content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 15%;
+}
+
+/* Mobile: Reduce side padding */
+@media (max-width: 768px) {
+    .resume-container {
+        padding: 1rem 5%;
+    }
 }
 
 .resume-header {
-    font-family: sans-serif; /* Clean, modern font */
-    font-size: 1.5rem; /* Header size */
-    margin-bottom: 1rem; /* Space below header */
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Mobile: Smaller header */
+@media (max-width: 768px) {
+    .resume-header {
+        font-size: 1.2rem;
+    }
 }
 
 .resume-download-link {
-    margin-bottom: 1.5rem; /* Space between icon and PDF viewer */
-    color: #0a66c2; /* LinkedIn blue */
-    font-size: 1.5rem; /* Icon size */
-    display: flex; /* Centers the icon properly */
-    align-items: center; /* Vertically centers icon */
-    transition: opacity 0.2s; /* Smooth hover effect */
+    margin-bottom: 1.5rem;
+    color: #0a66c2;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    transition: opacity 0.2s;
 }
 
 .resume-download-link:hover {
-    opacity: 0.7; /* Dims slightly on hover */
+    opacity: 0.7;
 }
 
 .resume-container.dark .resume-download-link {
-    color: #5eb1ff; /* Lighter blue for dark mode */
+    color: #5eb1ff;
 }
 
 .resume-pdf-container {
-    width: 100%; /* Takes full width of container */
-    max-width: 900px; /* Limits max width */
-    display: flex; /* Enables flexbox */
-    flex-direction: column; /* Stacks pages vertically */
-    align-items: center; /* Centers pages horizontally */
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .resume-page-wrapper {
-    margin-bottom: 1rem; /* Adds space between pages */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
-    border-radius: 4px; /* Rounded corners */
-    overflow: hidden; /* Ensures border-radius clips the canvas */
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100%; /* Ensures it takes full width */
 }
 
-/* Dark mode: inverts PDF colors by targeting canvas inside the container */
+/* Mobile: Ensure PDF pages fit screen */
+@media (max-width: 768px) {
+    .resume-page-wrapper {
+        margin-bottom: 0.5rem;
+        width: 100%;
+    }
+    
+    .resume-page-wrapper canvas {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
 .resume-pdf-container.dark canvas {
-    filter: invert(1) hue-rotate(180deg); /* Inverts colors and corrects hue shift */
+    filter: invert(1) hue-rotate(180deg);
 }
 
-/* Dark mode shadow adjustment */
 .resume-pdf-container.dark .resume-page-wrapper {
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1); /* Lighter shadow for dark mode */
+    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.1);
 }

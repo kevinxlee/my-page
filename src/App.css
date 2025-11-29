@@ -6,7 +6,7 @@
 
 html, body {
   height: 100%;
-  overflow: hidden; /* Prevents double scrollbars */
+  overflow: hidden;
 }
 
 #root {
@@ -22,9 +22,17 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 25%;
+  padding: 1rem 10%;
   background-color: white;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Mobile: Reduce padding on small screens */
+@media (max-width: 768px) {
+  .header-row {
+    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+  }
 }
 
 .bg-dark .header-row {
@@ -42,7 +50,14 @@ html, body {
   min-height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  padding-top: 80px; /* Offset for fixed navbar */
+  padding-top: 80px;
+}
+
+/* Mobile: Adjust padding for smaller screens */
+@media (max-width: 768px) {
+  .scroll-section {
+    padding-top: 120px; /* More space for potentially wrapped navbar */
+  }
 }
 
 .dark-mode-toggle {
@@ -73,4 +88,13 @@ html, body {
   color: #ffffff !important;
   font-weight: 600;
   border-bottom: 2px solid #ffffff;
+}
+
+/* Mobile: Better navbar styling */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: inherit;
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
 }

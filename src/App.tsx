@@ -1,6 +1,6 @@
 import './App.css'
 import { useState, useEffect } from 'react';
-import MyNavbar from './components/PortfolioNavbar';
+import PortfolioNavbar from './components/PortfolioNavbar';
 import HomePage from './components/home/HomePage';
 import ResumePage from './components/resume/ResumePage';
 import PhotosPage from './components/photos/PhotosPage';
@@ -62,7 +62,7 @@ function App() {
         <button onClick={() => setDarkMode(!darkMode)} className="dark-mode-toggle">
           {darkMode ? <FaSun /> : <FaMoon />}
         </button>
-        <MyNavbar darkMode={darkMode} activeSection={activeSection} />
+        <PortfolioNavbar darkMode={darkMode} activeSection={activeSection} />
       </div>
       
       <div className="scroll-container">
