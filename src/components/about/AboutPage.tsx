@@ -1,6 +1,7 @@
 import './AboutPage.css'
-function AboutPage({ darkMode }: { darkMode: boolean }) {
+function AboutPage() {
     return <div className="about-container">
+
         <h1>About me</h1>
         <p>
             Hello! I'm a passionate software developer with a love for creating dynamic and user-friendly web applications. With experience in various programming languages and frameworks, I enjoy solving complex problems and continuously learning new technologies.
